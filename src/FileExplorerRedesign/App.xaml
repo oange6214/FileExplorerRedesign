@@ -4,5 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:FileExplorerRedesign">
 
-    <Application.Resources />
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Assets/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="Assets/Styles/Icons.xaml" />
+                <ResourceDictionary Source="Assets/Styles/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
