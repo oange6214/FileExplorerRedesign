@@ -7,10 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Assets/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Assets/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="Assets/Styles/Icons.xaml" />
-                <ResourceDictionary Source="Assets/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Resources/ControlsDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

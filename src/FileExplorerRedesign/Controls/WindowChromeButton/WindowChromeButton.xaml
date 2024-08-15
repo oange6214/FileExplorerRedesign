@@ -1,6 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="WindowChromeButtonStyle" TargetType="{x:Type Button}">
+    <SolidColorBrush x:Key="IconActiveBrush" Color="#FF555555" />
+    <SolidColorBrush x:Key="CaptionCloseButtonMouseOverBrush" Color="#FFDC3545" />
+    <SolidColorBrush x:Key="CaptionCloseButtonDownBrush" Color="#FFC82333" />
+    <SolidColorBrush x:Key="ButtonPressedBrush" Color="#FFD4D4D4" />
+
+    <Style x:Key="WindowChromeButton" TargetType="{x:Type Button}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="44" />
@@ -26,22 +31,10 @@
     </Style>
 
     <Style
-        x:Key="WindowChromeRestoreButtonStyle"
-        BasedOn="{StaticResource WindowChromeButtonStyle}"
+        x:Key="WindowChromeCloseButton"
+        BasedOn="{StaticResource WindowChromeButton}"
         TargetType="{x:Type Button}">
-        <Setter Property="Content" Value="&#xE922;" />
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Value="Maximized">
-                <Setter Property="Content" Value="&#xE923;" />
-            </DataTrigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style
-        x:Key="WindowChromeCloseButtonStyle"
-        BasedOn="{StaticResource WindowChromeButtonStyle}"
-        TargetType="{x:Type Button}">
-        <Setter Property="Content" Value="&#xE922;" />
+        <Setter Property="Content" Value="&#xE8BB;" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource CaptionCloseButtonMouseOverBrush}" />
@@ -51,6 +44,18 @@
                 <Setter Property="Background" Value="{StaticResource CaptionCloseButtonDownBrush}" />
                 <Setter Property="Foreground" Value="White" />
             </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="WindowChromeRestoreButton"
+        BasedOn="{StaticResource WindowChromeButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="&#xE922;" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Value="Maximized">
+                <Setter Property="Content" Value="&#xE923;" />
+            </DataTrigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

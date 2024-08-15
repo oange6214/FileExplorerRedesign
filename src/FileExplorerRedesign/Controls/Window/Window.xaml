@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="Image0" UriSource="pack://application:,,,/Assets/Images/0.jpg" />
+    <BitmapImage x:Key="Image1" UriSource="pack://application:,,,/Assets/Images/1.jpg" />
+    <BitmapImage x:Key="Image2" UriSource="pack://application:,,,/Assets/Images/2.jpg" />
+    <BitmapImage x:Key="Image3" UriSource="pack://application:,,,/Assets/Images/3.jpg" />
+    <BitmapImage x:Key="Image4" UriSource="pack://application:,,,/Assets/Images/4.jpg" />
+    <BitmapImage x:Key="Image5" UriSource="pack://application:,,,/Assets/Images/5.jpg" />
+
+    <SolidColorBrush x:Key="InactiveWindowBrush" Color="#FFF0F0F0" />
+    <SolidColorBrush x:Key="Window.TitleFontBrush" Color="#FF333333" />
+
+    <Style TargetType="{x:Type Window}">
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="32"
+                    CornerRadius="0"
+                    GlassFrameThickness="0"
+                    NonClientFrameEdges="None"
+                    ResizeBorderThickness="1"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border
+                        x:Name="rootBorder"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{StaticResource InactiveWindowBrush}"
+                        BorderThickness="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="280" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--#region TitleBar-->
+
+                            <Grid
+                                x:Name="titleBarGrid"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Height="32">
+                                <TextBlock
+                                    x:Name="title"
+                                    Margin="30,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontWeight="Bold"
+                                    Foreground="{StaticResource Window.TitleFontBrush}"
+                                    Text="{TemplateBinding Title}" />
+
+                                <!--  Window Buttons  -->
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button
+                                        x:Name="minimizeButton"
+                                        Command="{Binding MinimizeCommand}"
+                                        Content="&#xE921;"
+                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontSize="11"
+                                        Style="{StaticResource WindowChromeButton}" />
+                                    <Button
+                                        x:Name="maximizeButton"
+                                        Command="{Binding MaximizeCommand}"
+                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontSize="11"
+                                        Style="{StaticResource WindowChromeRestoreButton}" />
+                                    <Button
+                                        x:Name="closeButton"
+                                        Command="{Binding CloseCommand}"
+                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontSize="11"
+                                        Style="{StaticResource WindowChromeCloseButton}" />
+                                </StackPanel>
+                            </Grid>
+
+                            <!--#endregion-->
+
+                            <!--#region Window Content-->
+
+                            <Grid Grid.RowSpan="2" Grid.Column="0">
+                                <Grid.Background>
+                                    <ImageBrush
+                                        x:Name="imageBrush"
+                                        AlignmentX="Right"
+                                        ImageSource="Assets/Images/0.jpg"
+                                        Stretch="UniformToFill" />
+                                </Grid.Background>
+
+                                <Border x:Name="border">
+                                    <Border.Background>
+                                        <SolidColorBrush Opacity=".65" Color="#FF343F3D" />
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                                <AdornerDecorator>
+                                    <ContentPresenter />
+                                </AdornerDecorator>
+                            </Grid>
+
+                            <!--#endregion-->
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames
+                                        RepeatBehavior="Forever"
+                                        Storyboard.TargetName="imageBrush"
+                                        Storyboard.TargetProperty="ImageSource"
+                                        Duration="0:0:35">
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:5" Value="{StaticResource Image0}" />
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:10" Value="{StaticResource Image1}" />
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:15" Value="{StaticResource Image2}" />
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:20" Value="{StaticResource Image3}" />
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:25" Value="{StaticResource Image4}" />
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:30" Value="{StaticResource Image5}" />
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="rootBorder" Property="BorderBrush" Value="Transparent" />
+                            <Setter TargetName="rootBorder" Property="Padding" Value="7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
