@@ -23,107 +23,125 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
+
+            <!--  Left Navigation  -->
             <ColumnDefinition Width="200" />
+
+            <!--  Main  -->
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <!--#region Left Navigation-->
 
-        <Grid>
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="95" />
             </Grid.RowDefinitions>
+
+            <ScrollViewer
+                Grid.Row="0"
+                Margin="25,0"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto">
+
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style BasedOn="{StaticResource TextBlockHasDropShadow}" TargetType="{x:Type TextBlock}" />
+                    </StackPanel.Resources>
+
+                    <!--  Favorites  -->
+                    <TextBlock Text="Favorites" />
+
+                    <ItemsControl Margin="0,0,0,16">
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Games"
+                            Icon="{StaticResource Folder}" />
+                    </ItemsControl>
+
+                    <!--  Remote  -->
+                    <TextBlock Text="Remote" />
+
+                    <ItemsControl Margin="0,0,0,16">
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="OneDrive"
+                            Icon="{StaticResource OneDrive}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Google Drive"
+                            Icon="{StaticResource GoogleDrive}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Dropbox"
+                            Icon="{StaticResource Dropbox}" />
+                    </ItemsControl>
+
+                    <!--  Libraries  -->
+                    <TextBlock Text="Libraries" />
+
+                    <ItemsControl Margin="0,0,0,16">
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Desktop"
+                            Icon="{StaticResource DesktopFolder}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Documents"
+                            Icon="{StaticResource DocumentsFolder}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Downloads"
+                            Icon="{StaticResource DownloadsFolder}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Pictures"
+                            Icon="{StaticResource PicturesFolder}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Videos"
+                            Icon="{StaticResource VideosFolder}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Music"
+                            Icon="{StaticResource MusicsFolder}" />
+                    </ItemsControl>
+
+                    <!--  Libraries  -->
+                    <TextBlock Text="Devices" />
+
+                    <ItemsControl Margin="0,0,0,16">
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Local Disk (C:)"
+                            Icon="{StaticResource CDrive}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Local Disk (D:)"
+                            Icon="{StaticResource NormalDrive}" />
+                        <ui:DriveAndFolderButton
+                            Margin="0,5,0,0"
+                            Content="Local Disk (E:)"
+                            Icon="{StaticResource NormalDrive}" />
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Row="1">
+                <ui:DriveAndFolderButton
+                    Margin="0,5,0,0"
+                    Content="User"
+                    Icon="{StaticResource User}" />
+                <ui:DriveAndFolderButton
+                    Margin="0,5,0,0"
+                    Content="Settings"
+                    Icon="{StaticResource Settings}" />
+            </StackPanel>
         </Grid>
 
-        <ScrollViewer
-            Grid.Row="0"
-            Margin="25,0"
-            HorizontalScrollBarVisibility="Disabled"
-            VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <StackPanel.Resources>
-                    <Style BasedOn="{StaticResource TextBlockHasDropShadow}" TargetType="{x:Type TextBlock}" />
-                </StackPanel.Resources>
-
-                <!--  Favorites  -->
-                <TextBlock Text="Favorites" />
-
-                <ItemsControl Margin="0,0,0,16">
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Games"
-                        Icon="{StaticResource Folder}" />
-                </ItemsControl>
-
-                <!--  Remote  -->
-                <TextBlock Text="Remote" />
-
-                <ItemsControl Margin="0,0,0,16">
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="OneDrive"
-                        Icon="{StaticResource OneDrive}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Google Drive"
-                        Icon="{StaticResource GoogleDrive}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Dropbox"
-                        Icon="{StaticResource Dropbox}" />
-                </ItemsControl>
-
-                <!--  Libraries  -->
-                <TextBlock Text="Libraries" />
-
-                <ItemsControl Margin="0,0,0,16">
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Desktop"
-                        Icon="{StaticResource DesktopFolder}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Documents"
-                        Icon="{StaticResource DocumentsFolder}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Downloads"
-                        Icon="{StaticResource DownloadsFolder}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Pictures"
-                        Icon="{StaticResource PicturesFolder}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Videos"
-                        Icon="{StaticResource VideosFolder}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Music"
-                        Icon="{StaticResource MusicsFolder}" />
-                </ItemsControl>
-
-                <!--  Libraries  -->
-                <TextBlock Text="Devices" />
-
-                <ItemsControl Margin="0,0,0,16">
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Local Disk (C:)"
-                        Icon="{StaticResource CDrive}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Local Disk (D:)"
-                        Icon="{StaticResource NormalDrive}" />
-                    <ui:DriveAndFolderButton
-                        Margin="0,5,0,0"
-                        Content="Local Disk (E:)"
-                        Icon="{StaticResource NormalDrive}" />
-                </ItemsControl>
-            </StackPanel>
-        </ScrollViewer>
-
         <!--#endregion-->
+
+        <!--  Main  -->
     </Grid>
 </Window>

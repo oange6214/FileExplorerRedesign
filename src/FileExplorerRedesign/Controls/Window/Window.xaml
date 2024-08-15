@@ -8,6 +8,7 @@
     <BitmapImage x:Key="Image5" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/5.jpg" />
 
     <Style x:Key="ModernBorderlessAnimatedWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="MaxHeight" Value="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}" />
         <Setter Property="AllowsTransparency" Value="True" />
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="UseLayoutRounding" Value="True" />
@@ -134,7 +135,6 @@
 
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="rootBorder" Property="BorderBrush" Value="Transparent" />
-                            <Setter TargetName="rootBorder" Property="Padding" Value="7" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
