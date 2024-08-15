@@ -7,7 +7,7 @@
         BlurRadius="4"
         ShadowDepth="0" />
 
-    <Style TargetType="{x:Type TextBlock}">
+    <Style x:Key="TextBlockHasDropShadow" TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{StaticResource NavFontBrush}" />

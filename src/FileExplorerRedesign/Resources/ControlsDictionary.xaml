@@ -1,13 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Resources/Colors/Colors.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Resources/Fonts/Fonts.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Resources/Icons/Icons.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/TextBlock/TextBlock.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/WindowChromeButton/WindowChromeButton.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/WindowChromeButton/WindowChromeCloseButton.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/WindowChromeButton/WindowChromeRestoreButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/DriveAndFolderButton/DriveAndFolderButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FileExplorerRedesign;component/Controls/Window/Window.xaml" />
     </ResourceDictionary.MergedDictionaries>

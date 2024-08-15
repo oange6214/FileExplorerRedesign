@@ -1,16 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <BitmapImage x:Key="Image0" UriSource="pack://application:,,,/Assets/Images/0.jpg" />
-    <BitmapImage x:Key="Image1" UriSource="pack://application:,,,/Assets/Images/1.jpg" />
-    <BitmapImage x:Key="Image2" UriSource="pack://application:,,,/Assets/Images/2.jpg" />
-    <BitmapImage x:Key="Image3" UriSource="pack://application:,,,/Assets/Images/3.jpg" />
-    <BitmapImage x:Key="Image4" UriSource="pack://application:,,,/Assets/Images/4.jpg" />
-    <BitmapImage x:Key="Image5" UriSource="pack://application:,,,/Assets/Images/5.jpg" />
+    <BitmapImage x:Key="Image0" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/0.jpg" />
+    <BitmapImage x:Key="Image1" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/1.jpg" />
+    <BitmapImage x:Key="Image2" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/2.jpg" />
+    <BitmapImage x:Key="Image3" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/3.jpg" />
+    <BitmapImage x:Key="Image4" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/4.jpg" />
+    <BitmapImage x:Key="Image5" UriSource="pack://application:,,,/FileExplorerRedesign;component/Assets/Images/5.jpg" />
 
-    <SolidColorBrush x:Key="InactiveWindowBrush" Color="#FFF0F0F0" />
-    <SolidColorBrush x:Key="Window.TitleFontBrush" Color="#FF333333" />
-
-    <Style TargetType="{x:Type Window}">
+    <Style x:Key="ModernBorderlessAnimatedWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="AllowsTransparency" Value="True" />
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="UseLayoutRounding" Value="True" />
@@ -33,7 +30,7 @@
                     <Border
                         x:Name="rootBorder"
                         Background="{TemplateBinding Background}"
-                        BorderBrush="{StaticResource InactiveWindowBrush}"
+                        BorderBrush="{DynamicResource InactiveWindowBrush}"
                         BorderThickness="0">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -58,7 +55,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     FontWeight="Bold"
-                                    Foreground="{StaticResource Window.TitleFontBrush}"
+                                    Foreground="{DynamicResource Window.TitleFontBrush}"
                                     Text="{TemplateBinding Title}" />
 
                                 <!--  Window Buttons  -->
@@ -67,21 +64,21 @@
                                         x:Name="minimizeButton"
                                         Command="{Binding MinimizeCommand}"
                                         Content="&#xE921;"
-                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontFamily="{DynamicResource SegoeMDL2Assets}"
                                         FontSize="11"
-                                        Style="{StaticResource WindowChromeButton}" />
+                                        Style="{DynamicResource WindowChromeButton}" />
                                     <Button
                                         x:Name="maximizeButton"
                                         Command="{Binding MaximizeCommand}"
-                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontFamily="{DynamicResource SegoeMDL2Assets}"
                                         FontSize="11"
-                                        Style="{StaticResource WindowChromeRestoreButton}" />
+                                        Style="{DynamicResource WindowChromeRestoreButton}" />
                                     <Button
                                         x:Name="closeButton"
                                         Command="{Binding CloseCommand}"
-                                        FontFamily="{StaticResource SegoeMDL2Assets}"
+                                        FontFamily="{DynamicResource SegoeMDL2Assets}"
                                         FontSize="11"
-                                        Style="{StaticResource WindowChromeCloseButton}" />
+                                        Style="{DynamicResource WindowChromeCloseButton}" />
                                 </StackPanel>
                             </Grid>
 
@@ -94,7 +91,7 @@
                                     <ImageBrush
                                         x:Name="imageBrush"
                                         AlignmentX="Right"
-                                        ImageSource="Assets/Images/0.jpg"
+                                        ImageSource="{DynamicResource Image0}"
                                         Stretch="UniformToFill" />
                                 </Grid.Background>
 

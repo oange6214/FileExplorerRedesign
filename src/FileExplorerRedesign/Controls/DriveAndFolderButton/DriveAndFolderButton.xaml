@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:FileExplorerRedesign.Controls">
 
-    <SolidColorBrush x:Key="ButtonMouseOverBrush" Color="#FFE6E6E6" />
     <SolidColorBrush x:Key="NavFontBrush" Color="WhiteSmoke" />
     <SolidColorBrush x:Key="BorderBrush" Color="#FF808080" />
 
@@ -43,7 +42,7 @@
                             Grid.Column="0"
                             Width="20"
                             Height="15"
-                            Data="{DynamicResource Folder}"
+                            Data="{TemplateBinding Icon}"
                             Effect="{DynamicResource DropShadowEffect}"
                             Fill="{DynamicResource NavFontBrush}"
                             Stretch="Uniform" />
