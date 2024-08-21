@@ -10,4 +10,6 @@
     <SolidColorBrush x:Key="CaptionCloseButtonMouseOverBrush" Color="#FFDC3545" />
     <SolidColorBrush x:Key="CaptionCloseButtonDownBrush" Color="#FFC82333" />
     <SolidColorBrush x:Key="ButtonPressedBrush" Color="#FFD4D4D4" />
+    <SolidColorBrush x:Key="MenuHeader.Static" Color="#FF888888" />
+    <SolidColorBrush x:Key="MenuHeader.Checked" Color="#FF444444" />
 </ResourceDictionary>

@@ -25,9 +25,9 @@
         <Grid.ColumnDefinitions>
 
             <!--  Left Navigation  -->
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="280" />
 
-            <!--  Main  -->
+            <!--  Explorer Header  -->
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
@@ -142,6 +142,48 @@
 
         <!--#endregion-->
 
-        <!--  Main  -->
+        <Grid Grid.Column="1" Margin="10,0,0,0">
+            <Grid.RowDefinitions>
+                <!--  Menu  -->
+                <RowDefinition Height="38" />
+
+                <!--  Sub Menu. File Operation buttons etc.  -->
+                <RowDefinition Height="auto" />
+
+                <!--  Navigation Buttons and Address Bar  -->
+                <RowDefinition Height="50" />
+
+                <!--  Files List  -->
+                <RowDefinition />
+
+                <!--  Footer. Showing file information and disk space  -->
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <!--#region Explorer Header-->
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <RadioButton
+                        Content="Home"
+                        IsChecked="True"
+                        Style="{StaticResource MenuHeaderRadioButtonSLtyle}" />
+                    <RadioButton Content="Computer" Style="{StaticResource MenuHeaderRadioButtonSLtyle}" />
+                    <RadioButton Content="View" Style="{StaticResource MenuHeaderRadioButtonSLtyle}" />
+
+                    <ToggleButton x:Name="ToggleExpandCollapseSubMenu" Style="{StaticResource ExpandCollapseToggleButtonStyle}" />
+                </StackPanel>
+            </Grid>
+
+            <!--#endregion-->
+        </Grid>
     </Grid>
 </Window>
