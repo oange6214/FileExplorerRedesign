@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:FileExplorerRedesign"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prop="clr-namespace:FileExplorerRedesign.Properties"
     xmlns:ui="clr-namespace:FileExplorerRedesign.Controls"
     xmlns:vm="clr-namespace:FileExplorerRedesign.ViewModels"
     x:Name="mainWindow"
@@ -195,6 +196,17 @@
                         x:Name="SearchBox"
                         Margin="12,0"
                         Style="{StaticResource SearchBoxStyle}" />
+                    <Button
+                        Width="44"
+                        Content="{StaticResource Share}"
+                        FontSize="20"
+                        Style="{StaticResource ButtonWithIconStyle}" />
+                    <ToggleButton
+                        Width="44"
+                        Command="{Binding DarkLightModeSwitchCommand}"
+                        FontSize="15"
+                        IsChecked="{Binding DarkMode, Mode=TwoWay, Source={x:Static prop:Settings.Default}}"
+                        Style="{StaticResource DarkLightModeToggleButtonStyle}" />
                 </StackPanel>
             </Grid>
 
