@@ -211,6 +211,26 @@
             </Grid>
 
             <!--#endregion-->
+
+            <!--#region Sub Menu-->
+
+            <Grid Grid.Row="1" HorizontalAlignment="Left">
+                <StackPanel
+                    x:Name="FileOperationsPanel"
+                    Margin="10,0"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+                    <ItemsControl>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+
+            <!--#endregion-->
         </Grid>
     </Grid>
 </Window>
