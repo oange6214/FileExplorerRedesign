@@ -179,7 +179,22 @@
                     <RadioButton Content="Computer" Style="{StaticResource MenuHeaderRadioButtonSLtyle}" />
                     <RadioButton Content="View" Style="{StaticResource MenuHeaderRadioButtonSLtyle}" />
 
-                    <ToggleButton x:Name="ToggleExpandCollapseSubMenu" Style="{StaticResource ExpandCollapseToggleButtonStyle}" />
+                    <ToggleButton
+                        x:Name="ToggleExpandCollapseSubMenu"
+                        FontSize="10"
+                        Style="{StaticResource ExpandCollapseToggleButtonStyle}" />
+                </StackPanel>
+
+                <!--  SearchBox  -->
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBox
+                        x:Name="SearchBox"
+                        Margin="12,0"
+                        Style="{StaticResource SearchBoxStyle}" />
                 </StackPanel>
             </Grid>
 

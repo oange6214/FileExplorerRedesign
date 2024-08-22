@@ -12,4 +12,7 @@
     <SolidColorBrush x:Key="ButtonPressedBrush" Color="#FFD4D4D4" />
     <SolidColorBrush x:Key="MenuHeader.Static" Color="#FF888888" />
     <SolidColorBrush x:Key="MenuHeader.Checked" Color="#FF444444" />
+    <SolidColorBrush x:Key="SearchBox.Static" Color="#FF888888" />
+    <SolidColorBrush x:Key="SearchBox.Active" Color="#FF444444" />
+    <SolidColorBrush x:Key="DisabledFontBrush" Color="#FF888888" />
 </ResourceDictionary>
