@@ -227,6 +227,8 @@
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
+
+                    <ui:SubMenuIconButton />
                 </StackPanel>
             </Grid>
 
